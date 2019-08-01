@@ -24,6 +24,10 @@
                     </div>
                 </form>
 			</nav>
+			<div class="btn-toggle">
+				<button>Wishlist</button>
+				<button>Purchased</button>
+			</div>
 			<div class="container d-flex flex-column justify-content-center align-items-center p-4 bg-light" v-for="(item) in vinyls">
 				<div class="card w-75 bg-dark">
                     <img :src="item.albumArt"
@@ -36,6 +40,16 @@
                         <button class="btn btn-danger mt-2" v-on:click="deleteVinyl(item)">Delete</button>
                         </div>
                     </div>
+				</div>
+				<!-- Purchased Vinyls -->
+				<div class="container d-flex flex-column justify-content-center align-items-center p-4 bg-light" v-for="(vinyl) in deleted">
+					<div class="card w-75 bg-dark">
+						<img :src="vinyl.albumArt" :alt="vinyl.artist" class="card-img-top">
+						<div class="card-body">
+							<h6 class="card-title text-light">{{ vinyl.artist }}</h6>
+							<h3 class="card-subtitle text-light">{{ vinyl.albumTitle }}</h3>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
