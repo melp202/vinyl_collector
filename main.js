@@ -88,8 +88,9 @@ let app = new Vue({
 		deleteVinyl: function(vinyl) {
 			// return this.vinyls.splice(this.vinyls.indexOf(vinyl), 1);
 			// push items into new array
+			// this.deleted.push(this.vinyls.splice(this.vinyls.indexOf(vinyl), 1));
 			this.deleted.push(this.vinyls.splice(this.vinyls.indexOf(vinyl), 1));
-			console.log(this.deleted);
+			console.log(this.deleted[0]);
 			console.log(this.vinyls);
 		}
 	}
